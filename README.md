@@ -1,6 +1,28 @@
 # 🌟 FinanceAI - Smart Personal Finance Assistant
 
-> **Winner Submission:** An intelligent AI-powered finance management platform that combines expense tracking, ML-based predictions, and personalized financial guidance - all in one beautiful interface.
+> **Winner Submi4. **Savings Goals**
+ 6. **📊 Visual Analyti8. **🧮 EMI Calculator**
+   - Interactive loan EMI calculator
+   - Real-time calculation with sliders
+   - Visual breakdown with doughnut chart
+   - Principal vs Interest comparison
+   - Support for various loan types (Home, Car, Personal)
+   - Smart currency formatting (Lac/Cr)
+
+9. **🔒 Secure Authentication**- Interactive spending pie charts
+   - Monthly trend line graphs
+   - Category-wise breakdown
+   - Budget vs. actual comparisons
+   - Modern Chart.js visualizations with animations
+   - 65% cutout doughnut charts for modern look
+
+7. **⭐ Smart Finance Dashboard**te multiple savings goals
+   - Track progress with visual indicators
+   - Set deadlines and milestones
+   - Update progress as you save
+   - Milestone notifications and celebrations
+
+5. **🤖 AI-Powered Chatbot** (Google Gemini 2.0 Flash)* An intelligent AI-powered finance management platform that combines expense tracking, ML-based predictions, and personalized financial guidance - all in one beautiful interface.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
@@ -44,39 +66,68 @@ The crown jewel of our application - a one-click comprehensive financial health 
 
 ### 📊 Core Features
 
-1. **Expense & Income Tracking**
+1. **🔔 Smart Notification System** (NEW!)
+   - Real-time notification bell with badge counter
+   - Contextual alerts based on your financial activity
+   - Budget warnings at 75%, 90%, and 100% thresholds
+   - Goal achievement celebrations (50%, 75%, 100% milestones)
+   - High spending alerts (daily threshold monitoring)
+   - Smart financial tips and reminders
+   - Color-coded notifications (success, warning, info, danger)
+   - Dismissible individual or bulk notifications
+
+2. **Expense & Income Tracking**
    - Quick transaction entry with categories
    - Automatic categorization suggestions
    - View detailed transaction history
    - Edit or delete transactions easily
+   - Instant success notifications
 
-2. **Budget Management**
+3. **Budget Management**
    - Set category-wise monthly budgets
    - Real-time budget vs. actual tracking
    - Visual progress bars
-   - Alert notifications for overspending
+   - Proactive alert notifications for overspending
 
-3. **Savings Goals**
+4. **Savings Goals**
    - Create multiple savings goals
    - Track progress with visual indicators
    - Set deadlines and milestones
    - Update progress as you save
 
-4. **🤖 AI-Powered Chatbot** (Google Gemini 2.0 Flash)
+5. **🤖 AI-Powered Chatbot** (Google Gemini 2.0 Flash)
    - Natural language conversation
    - Personalized financial advice
    - Budget recommendations
    - Spending pattern analysis
    - Financial literacy tips
-   - Context-aware responses (max 100 words)
+   - Context-aware responses (max 50 words)
+   - Smooth typing animation for better UX
+   - Bullet-pointed, actionable advice
 
-5. **� Visual Analytics**
+6. **📊 Visual Analytics**
    - Interactive spending pie charts
    - Monthly trend line graphs
    - Category-wise breakdown
    - Budget vs. actual comparisons
+   - Modern Chart.js visualizations with animations
 
-6. **🔒 Secure Authentication**
+7. **⭐ Smart Finance Dashboard**
+   - AI-powered Financial Health Score
+   - Predictive spending analytics
+   - Intelligent financial suggestions
+   - Visual gauge indicators
+   - Comprehensive financial insights
+
+8. **🧮 EMI Calculator**
+   - Interactive loan EMI calculator
+   - Real-time calculation with sliders
+   - Visual breakdown with doughnut chart
+   - Principal vs Interest comparison
+   - Support for various loan types (Home, Car, Personal)
+   - Smart currency formatting (Lac/Cr)
+
+8. **🔒 Secure Authentication**
    - Bcrypt password hashing
    - JWT token-based sessions
    - Secure user data storage

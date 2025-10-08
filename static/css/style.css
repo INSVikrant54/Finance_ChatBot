@@ -1,0 +1,1417 @@
+/* ========================================
+   FINANCEAI - PROFESSIONAL GREY THEME
+   Silver-Grey Color Palette with Animations
+   FIXED TEXT VISIBILITY
+   ======================================== */
+
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Card Styles - Silver Grey Theme */
+.card {
+    background: linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%);
+    border: 1px solid rgba(44, 62, 80, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: cardSlideIn 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(189, 195, 199, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(44, 62, 80, 0.2);
+    border-color: rgba(127, 140, 141, 0.3);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card:hover .card-icon {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* TEXT VISIBILITY FIX - High Contrast for Gradient Cards */
+.gradient-purple {
+    background: linear-gradient(135deg, #7f8c8d 0%, #2c3e50 100%) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.gradient-purple * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.gradient-purple h3,
+.gradient-purple h6,
+.gradient-purple .card-title,
+.gradient-purple .card-subtitle {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+}
+
+.gradient-green {
+    background: linear-gradient(135deg, #95a5a6 0%, #5f6f7a 100%) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.gradient-green * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.gradient-green h3,
+.gradient-green h6,
+.gradient-green .card-title,
+.gradient-green .card-subtitle {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+}
+
+.gradient-red {
+    background: linear-gradient(135deg, #636e72 0%, #2d3436 100%) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.gradient-red * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.gradient-red h3,
+.gradient-red h6,
+.gradient-red .card-title,
+.gradient-red .card-subtitle {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+}
+
+.gradient-blue {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.gradient-blue * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.gradient-blue h3,
+.gradient-blue h6,
+.gradient-blue .card-title,
+.gradient-blue .card-subtitle {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+}
+
+/* All text-white cards get enhanced visibility */
+.card.text-white * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    font-weight: 600 !important;
+}
+
+.card.text-white h1,
+.card.text-white h2,
+.card.text-white h3,
+.card.text-white h4,
+.card.text-white h5,
+.card.text-white h6 {
+    font-weight: 800 !important;
+}
+
+.card.text-white i {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+/* Button Styles - Grey Theme */
+.btn-primary {
+    background: linear-gradient(135deg, #7f8c8d 0%, #2c3e50 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #95a5a6 0%, #5f6f7a 100%);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #636e72 0%, #2d3436 100%);
+    border: none;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #bdc3c7 0%, #95a5a6 100%);
+    border: none;
+    color: #2c3e50;
+}
+
+/* Table Styles */
+.table-responsive {
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.table {
+    animation: fadeIn 1s ease-out;
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    z-index: 1;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(189, 195, 199, 0.1);
+    transform: scale(1.01);
+}
+
+/* Badge Styles */
+.badge {
+    padding: 0.5em 1em;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Progress Bar Animations */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    overflow: visible;
+    background: rgba(189, 195, 199, 0.2);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #7f8c8d 0%, #2c3e50 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.3);
+    animation: progressSlide 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Chat Container */
+#chatMessages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    max-width: 70%;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.chat-message:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.user-message {
+    background: linear-gradient(135deg, #7f8c8d 0%, #34495e 100%);
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.ai-message {
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    color: #2c3e50;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalZoomIn 0.3s ease-out;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #7f8c8d 0%, #2c3e50 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border: none;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    border: 2px solid rgba(189, 195, 199, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #7f8c8d;
+    box-shadow: 0 0 0 0.2rem rgba(127, 140, 141, 0.25);
+    transform: scale(1.02);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* Auth Container - ENHANCED TEXT VISIBILITY */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+    animation: cardZoomIn 0.5s ease-out;
+}
+
+.auth-card h1 {
+    color: #2c3e50 !important;
+    font-weight: 800 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.auth-card .bi-robot {
+    color: #7f8c8d !important;
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.auth-card p {
+    color: #34495e !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem;
+}
+
+.auth-card .nav-link {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.auth-card .nav-link.active {
+    background: linear-gradient(135deg, #7f8c8d 0%, #2c3e50 100%);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .chat-message {
+        max-width: 85%;
+    }
+    
+    .auth-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cardZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes modalZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes progressSlide {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(189, 195, 199, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #7f8c8d 0%, #2c3e50 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2c3e50 0%, #7f8c8d 100%);
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(127, 140, 141, 0.3);
+    border-radius: 50%;
+    border-top-color: #7f8c8d;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   AI CHAT TYPING ANIMATION
+   ======================================== */
+
+/* Typing indicator dots */
+.typing-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 0;
+}
+
+.typing-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #7f8c8d;
+    animation: typingBounce 1.4s infinite ease-in-out;
+    display: inline-block;
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* Smooth fade-in for chat messages */
+.chat-message {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   SMART FINANCE PANEL STYLES
+   ======================================== */
+
+/* Smart Finance Button */
+.btn-gradient-smart {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(238, 90, 111, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse-glow 2s infinite;
+}
+
+.btn-gradient-smart:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(238, 90, 111, 0.6);
+    background: linear-gradient(135deg, #c44569 0%, #ee5a6f 50%, #ff6b6b 100%);
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(238, 90, 111, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(238, 90, 111, 0.7);
+    }
+}
+
+/* Smart Finance Container */
+.smart-finance-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.smart-finance-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.smart-finance-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.smart-finance-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* Health Score Card */
+.health-score-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.health-score-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.score-gauge {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-value {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #667eea;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: scaleIn 0.8s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.score-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.score-metric {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.score-metric:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.score-metric i {
+    font-size: 1.8rem;
+}
+
+.score-metric span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.health-status {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.health-status strong {
+    font-size: 1.1rem;
+}
+
+.health-status span {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Prediction Card */
+.prediction-card {
+    background: linear-gradient(145deg, #ffffff 0%, #e8f4f8 100%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    height: 100%;
+}
+
+.prediction-card .card-title {
+    color: #2980b9;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.prediction-content {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prediction-item {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.prediction-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.prediction-category {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prediction-amount {
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+.prediction-summary {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.prediction-summary h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.prediction-trend {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.trend-increasing {
+    background: rgba(255, 107, 107, 0.2);
+    color: #e74c3c;
+}
+
+.trend-decreasing {
+    background: rgba(39, 174, 96, 0.2);
+    color: #27ae60;
+}
+
+.trend-stable {
+    background: rgba(241, 196, 15, 0.2);
+    color: #f39c12;
+}
+
+/* Suggestion Card */
+.suggestion-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f0f9e8 100%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    height: 100%;
+}
+
+.suggestion-card .card-title {
+    color: #27ae60;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.suggestion-content {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestion-item {
+    background: white;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #27ae60;
+    transition: all 0.3s ease;
+}
+
+.suggestion-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.suggestion-title {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.suggestion-title i {
+    color: #27ae60;
+    font-size: 1.3rem;
+}
+
+.suggestion-details {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.suggestion-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ecf0f1;
+}
+
+.suggestion-amount strong {
+    color: #27ae60;
+    font-size: 1.1rem;
+}
+
+.suggestion-priority {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.priority-high {
+    background: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+}
+
+.priority-medium {
+    background: rgba(243, 156, 18, 0.2);
+    color: #f39c12;
+}
+
+.priority-low {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+}
+
+/* Hidden Panel */
+#smartFinancePanel {
+    display: none;
+}
+
+#smartFinancePanel.show {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .health-score-display {
+        flex-direction: column;
+    }
+    
+    .score-gauge {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .score-value {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================
+   MODERN CHART STYLING
+   ======================================== */
+
+/* Chart Container Enhancement */
+#spendingDoughnutChart,
+#trendLineChart {
+    max-height: 400px;
+    padding: 20px;
+}
+
+/* Chart Card Styling */
+.card:has(#spendingDoughnutChart),
+.card:has(#trendLineChart) {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:has(#spendingDoughnutChart):hover,
+.card:has(#trendLineChart):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(44, 62, 80, 0.18);
+}
+
+/* Chart Title Styling */
+.card:has(#spendingDoughnutChart) .card-title,
+.card:has(#trendLineChart) .card-title {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.card:has(#spendingDoughnutChart) .card-title::after,
+.card:has(#trendLineChart) .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+/* Add subtle animation to chart cards on load */
+@keyframes chartFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:has(#spendingDoughnutChart),
+.card:has(#trendLineChart) {
+    animation: chartFadeIn 0.8s ease-out;
+}
+
+/* Chart Container Padding */
+.card-body:has(#spendingDoughnutChart),
+.card-body:has(#trendLineChart) {
+    padding: 25px;
+}
+
+/* ========================================
+   EMI CALCULATOR STYLING
+   ======================================== */
+
+/* EMI Calculator Button */
+.btn-gradient-emi {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.btn-gradient-emi:hover {
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+    color: white;
+}
+
+.btn-gradient-emi:active {
+    transform: translateY(0);
+}
+
+/* EMI Calculator Container */
+.emi-calculator-container {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe8ec 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(245, 87, 108, 0.15);
+    animation: slideInRight 0.6s ease-out;
+}
+
+.emi-calculator-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emi-calculator-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.emi-calculator-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* EMI Range Sliders */
+.form-range {
+    height: 8px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 3px solid #f5576c;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(245, 87, 108, 0.4);
+    transition: all 0.3s ease;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.6);
+}
+
+.form-range::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 3px solid #f5576c;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(245, 87, 108, 0.4);
+    transition: all 0.3s ease;
+}
+
+.form-range::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.6);
+}
+
+/* EMI Result Display */
+.emi-result-display {
+    text-align: center;
+}
+
+.emi-amount {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+    margin-bottom: 20px;
+}
+
+.emi-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.emi-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* EMI Details */
+.emi-details {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.emi-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.emi-detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-label i {
+    font-size: 1.2rem;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* EMI Calculator Cards */
+.emi-calculator-container .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.emi-calculator-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.emi-calculator-container .card-title {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+/* EMI Form Labels */
+.emi-calculator-container .form-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.emi-calculator-container .form-label strong {
+    color: #f5576c;
+    font-size: 1.1rem;
+}
+
+/* Responsive EMI Calculator */
+@media (max-width: 768px) {
+    .emi-calculator-container {
+        padding: 20px;
+    }
+    
+    .emi-calculator-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .emi-value {
+        font-size: 2rem;
+    }
+    
+    .emi-calculator-container .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* ========================================
+   NOTIFICATION SYSTEM
+   ======================================== */
+
+/* Notification Bell */
+#notificationDropdown {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+#notificationDropdown:hover {
+    transform: scale(1.1);
+}
+
+#notificationBadge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+    animation: notificationPulse 2s infinite;
+}
+
+@keyframes notificationPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+    width: 350px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 12px;
+}
+
+.notification-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    gap: 12px;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #2c3e50;
+}
+
+.notification-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.notification-time {
+    font-size: 0.75rem;
+    color: #95a5a6;
+}
+
+/* Notification Types */
+.notification-warning {
+    border-left: 4px solid #f39c12;
+}
+
+.notification-success {
+    border-left: 4px solid #27ae60;
+}
+
+.notification-info {
+    border-left: 4px solid #3498db;
+}
+
+.notification-danger {
+    border-left: 4px solid #e74c3c;
+}
+
+/* Notification Icon Colors */
+.notification-warning .notification-icon {
+    color: #f39c12;
+}
+
+.notification-success .notification-icon {
+    color: #27ae60;
+}
+
+.notification-info .notification-icon {
+    color: #3498db;
+}
+
+.notification-danger .notification-icon {
+    color: #e74c3c;
+}
+
+/* Empty State */
+.notification-empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: #95a5a6;
+}
+
+.notification-empty i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+/* Scrollbar Styling for Notifications */
+.notification-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notification-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.notification-dropdown::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 10px;
+}
+
+.notification-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}
+
+

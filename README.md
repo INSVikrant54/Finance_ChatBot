@@ -1,28 +1,5 @@
 # 🌟 FinanceAI - Smart Personal Finance Assistant
 
-> **Winner Submi4. **Savings Goals**
- 6. **📊 Visual Analyti8. **🧮 EMI Calculator**
-   - Interactive loan EMI calculator
-   - Real-time calculation with sliders
-   - Visual breakdown with doughnut chart
-   - Principal vs Interest comparison
-   - Support for various loan types (Home, Car, Personal)
-   - Smart currency formatting (Lac/Cr)
-
-9. **🔒 Secure Authentication**- Interactive spending pie charts
-   - Monthly trend line graphs
-   - Category-wise breakdown
-   - Budget vs. actual comparisons
-   - Modern Chart.js visualizations with animations
-   - 65% cutout doughnut charts for modern look
-
-7. **⭐ Smart Finance Dashboard**te multiple savings goals
-   - Track progress with visual indicators
-   - Set deadlines and milestones
-   - Update progress as you save
-   - Milestone notifications and celebrations
-
-5. **🤖 AI-Powered Chatbot** (Google Gemini 2.0 Flash)* An intelligent AI-powered finance management platform that combines expense tracking, ML-based predictions, and personalized financial guidance - all in one beautiful interface.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)

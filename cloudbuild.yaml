@@ -1,0 +1,21 @@
+# Optional: For automatic builds from GitHub
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/finance-chatbot', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/finance-chatbot']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'finance-chatbot'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/finance-chatbot'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+images:
+  - 'gcr.io/$PROJECT_ID/finance-chatbot'

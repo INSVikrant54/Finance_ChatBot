@@ -7,12 +7,16 @@ class Config:
     """Application configuration"""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
     
-    # Database configuration - ALWAYS use /tmp for Render (writable location)
-    # Check if running on Render or locally
+    # Database configuration - Use /tmp for cloud platforms (writable location)
+    # Check if running on Render, Cloud Run, or locally
     basedir = os.path.abspath(os.path.dirname(__file__))
     
-    # Use /tmp on any cloud platform, instance folder locally
-    if os.path.exists('/opt/render'):  # Render detection
+    # Detect cloud platform: Render, Cloud Run, or other
+    is_render = os.path.exists('/opt/render')
+    is_cloud_run = os.environ.get('K_SERVICE') is not None  # Cloud Run sets this
+    
+    if is_render or is_cloud_run:
+        # Cloud platform - use /tmp (only writable directory)
         DATABASE_PATH = '/tmp/finance_chatbot.db'
     else:
         # Local development

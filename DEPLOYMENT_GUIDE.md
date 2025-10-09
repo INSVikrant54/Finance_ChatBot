@@ -86,15 +86,41 @@ git push origin main
 
 9. Your app will be live at: `https://financeai-chatbot.onrender.com`
 
-#### 3. **Initialize Demo Data** (After First Deploy)
+#### 3. **Initialize Demo Data** (IMPORTANT - Do This After First Deploy)
 
-Use Render Shell to create demo data:
-```bash
-# In Render Dashboard → Shell
-python create_demo_data.py
-```
+**What is Demo Data?**
+The `create_demo_data.py` script creates:
+- ✅ Demo user account (username: `demo`, password: `demo123`)
+- ✅ Sample transactions (income, expenses, savings)
+- ✅ Sample budgets (Food, Transport, Entertainment, etc.)
+- ✅ Sample savings goals (Emergency Fund, Vacation)
+- ✅ Pre-populated database so judges can see features immediately
 
-### ✅ Done! Your app is now live and accessible worldwide!
+**How to Create Demo Data on Render:**
+
+1. **Go to your Render Dashboard**
+2. **Click on your deployed service** (`financeai-chatbot`)
+3. **Click "Shell"** tab (top menu)
+4. **Run this command** in the Render Shell:
+   ```bash
+   python create_demo_data.py
+   ```
+5. **You'll see output like:**
+   ```
+   ✅ Created demo user
+      Username: demo
+      Password: demo123
+   ✅ Created 15 sample transactions
+   ✅ Created 5 budgets
+   ✅ Created 2 savings goals
+   🎉 Demo data created successfully!
+   ```
+
+**Now you can login with:**
+- Username: `demo`
+- Password: `demo123`
+
+### ✅ Done! Your app is now live with demo data and ready for judges!
 
 ---
 
@@ -351,6 +377,18 @@ git push origin main
 
 ## 🆘 Troubleshooting
 
+### Issue: "Demo login not working" / "Invalid credentials"
+**Cause**: You haven't run `create_demo_data.py` yet
+**Solution**: 
+1. Go to Render Dashboard → Your Service → Shell tab
+2. Run: `python create_demo_data.py`
+3. Wait for "✅ Demo data created successfully!" message
+4. Now try logging in with username: `demo`, password: `demo123`
+
+### Issue: "No transactions showing" / "Empty dashboard"
+**Cause**: Database is empty, demo data not created
+**Solution**: Same as above - run `create_demo_data.py` in Render Shell
+
 ### Issue: Database doesn't persist
 **Solution**: Ensure you're using persistent storage:
 ```python
@@ -432,3 +470,68 @@ Database: SQLite
 8. ✅ Share URL with judges
 
 **Good luck with your hackathon presentation! 🚀**
+
+---
+
+## 📋 Quick Reference: After Deployment Checklist
+
+**After you deploy on Render, follow these steps in order:**
+
+### Step 1: Wait for Deployment to Complete ⏳
+- Check Render Dashboard until you see "Live" status (green)
+- Usually takes 5-10 minutes
+
+### Step 2: Create Demo Data 🎯
+1. Go to Render Dashboard
+2. Click your service name
+3. Click **"Shell"** tab
+4. Type: `python create_demo_data.py`
+5. Press Enter
+6. Wait for success message
+
+### Step 3: Test Your App 🧪
+1. Click **"Open URL"** in Render Dashboard
+2. Your app opens in browser
+3. Click **"Login"** on homepage
+4. Enter:
+   - Username: `demo`
+   - Password: `demo123`
+5. Click Login
+
+### Step 4: Verify Demo Data ✅
+After login, you should see:
+- ✅ Dashboard with charts and graphs
+- ✅ Recent transactions (15+ entries)
+- ✅ Budgets (Food, Transport, Entertainment, etc.)
+- ✅ Savings goals (Emergency Fund, Vacation)
+- ✅ AI Chatbot ready to answer questions
+
+### Step 5: Share with Judges 📱
+Copy your Render URL and share:
+```
+🌟 FinanceAI - Live Demo
+🔗 URL: https://your-app-name.onrender.com
+👤 Demo Login:
+   Username: demo
+   Password: demo123
+```
+
+---
+
+## ⚠️ Common Mistakes to Avoid
+
+❌ **DON'T**: Try to login before running `create_demo_data.py`
+✅ **DO**: Run the script first, then login
+
+❌ **DON'T**: Forget to run `create_demo_data.py` in Render Shell
+✅ **DO**: Use Render's built-in Shell feature (not your local terminal)
+
+❌ **DON'T**: Create new user manually for demo
+✅ **DO**: Use the pre-configured demo account (username: demo, password: demo123)
+
+❌ **DON'T**: Skip testing before presenting
+✅ **DO**: Test login and all features before your hackathon presentation
+
+---
+
+**Remember**: `create_demo_data.py` is a ONE-TIME setup. After running it once, your demo account and data persist forever! 🎉

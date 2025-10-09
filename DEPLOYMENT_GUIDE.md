@@ -96,25 +96,58 @@ The `create_demo_data.py` script creates:
 - ✅ Sample savings goals (Emergency Fund, Vacation)
 - ✅ Pre-populated database so judges can see features immediately
 
-**How to Create Demo Data on Render:**
+**✨ GOOD NEWS: Demo Data is AUTO-CREATED!**
 
-1. **Go to your Render Dashboard**
-2. **Click on your deployed service** (`financeai-chatbot`)
-3. **Click "Shell"** tab (top menu)
-4. **Run this command** in the Render Shell:
-   ```bash
-   python create_demo_data.py
+Your app now **automatically creates demo data** when it first starts! 🎉
+
+However, if you need to manually trigger it, here are 3 options:
+
+---
+
+**OPTION 1: Automatic (No Action Needed)** ⭐ **EASIEST**
+
+Just deploy and wait! The app automatically checks if demo user exists. If not, it creates all demo data on first startup.
+
+✅ **No manual steps required**  
+✅ **Works on Render free tier**  
+✅ **Demo data ready immediately**
+
+---
+
+**OPTION 2: Use API Endpoint** 🌐
+
+If auto-creation didn't work, trigger it manually via API:
+
+1. **After deployment succeeds**, open your browser
+2. **Navigate to**: `https://your-app-name.onrender.com/api/create-demo-data`
+3. **You'll see JSON response**:
+   ```json
+   {
+     "success": true,
+     "message": "Demo data created successfully!",
+     "credentials": {
+       "username": "demo",
+       "password": "demo123"
+     }
+   }
    ```
-5. **You'll see output like:**
-   ```
-   ✅ Created demo user
-      Username: demo
-      Password: demo123
-   ✅ Created 15 sample transactions
-   ✅ Created 5 budgets
-   ✅ Created 2 savings goals
-   🎉 Demo data created successfully!
-   ```
+4. **Done!** Now you can login with demo/demo123
+
+**Using curl (alternative)**:
+```bash
+curl -X POST https://your-app-name.onrender.com/api/create-demo-data
+```
+
+---
+
+**OPTION 3: Render Shell** 🔒 (Premium Only)
+
+If you have Render paid plan:
+1. Go to Render Dashboard
+2. Click **"Shell"** tab
+3. Run: `python create_demo_data.py`
+
+---
 
 **Now you can login with:**
 - Username: `demo`
@@ -395,16 +428,25 @@ git push origin main
 - All core features (AI chat, database, auth) still work perfectly
 
 ### Issue: "Demo login not working" / "Invalid credentials"
-**Cause**: You haven't run `create_demo_data.py` yet
-**Solution**: 
-1. Go to Render Dashboard → Your Service → Shell tab
-2. Run: `python create_demo_data.py`
-3. Wait for "✅ Demo data created successfully!" message
-4. Now try logging in with username: `demo`, password: `demo123`
+**Cause**: Demo data wasn't auto-created or failed during startup
+**Solution**: Manually trigger demo data creation via API:
+1. Open browser and visit: `https://your-app-name.onrender.com/api/create-demo-data`
+2. You'll see JSON response confirming demo data created
+3. Now try logging in with username: `demo`, password: `demo123`
+
+**Alternative**: Check deployment logs on Render to see if demo data creation failed
 
 ### Issue: "No transactions showing" / "Empty dashboard"
-**Cause**: Database is empty, demo data not created
-**Solution**: Same as above - run `create_demo_data.py` in Render Shell
+**Cause**: Demo data creation failed
+**Solution**: Use the API endpoint to manually create demo data:
+```bash
+curl -X POST https://your-app-name.onrender.com/api/create-demo-data
+```
+Or simply visit the URL in your browser (POST request auto-triggered)
+
+### Issue: "Shell tab locked on Render"
+**Cause**: Render Shell is premium-only feature
+**Solution**: ✅ **Already solved!** Your app auto-creates demo data on startup. No shell access needed.
 
 ### Issue: Database doesn't persist
 **Solution**: Ensure you're using persistent storage:
@@ -496,15 +538,17 @@ Database: SQLite
 
 ### Step 1: Wait for Deployment to Complete ⏳
 - Check Render Dashboard until you see "Live" status (green)
-- Usually takes 5-10 minutes
+- Usually takes 2-5 minutes (now faster without pandas!)
 
-### Step 2: Create Demo Data 🎯
-1. Go to Render Dashboard
-2. Click your service name
-3. Click **"Shell"** tab
-4. Type: `python create_demo_data.py`
-5. Press Enter
-6. Wait for success message
+### Step 2: Demo Data Auto-Created! �
+**Your app automatically creates demo data on first startup!**
+
+✅ **No manual steps needed** - Just wait for deployment to finish
+✅ **Demo account ready immediately**: username `demo`, password `demo123`
+
+**If you want to verify demo data was created:**
+1. Check deployment logs for: `✅ Demo data created successfully!`
+2. OR visit: `https://your-app-name.onrender.com/api/create-demo-data` in browser
 
 ### Step 3: Test Your App 🧪
 1. Click **"Open URL"** in Render Dashboard

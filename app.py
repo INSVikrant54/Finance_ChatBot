@@ -21,9 +21,21 @@ db.init_app(app)
 # Initialize AI service with Gemini API
 ai_service = FinanceAIService(app.config['GEMINI_API_KEY'])
 
-# Create database tables
+# Create database tables and demo data
 with app.app_context():
     db.create_all()
+    
+    # Auto-create demo data if demo user doesn't exist
+    from backend.database import User
+    demo_user = User.query.filter_by(username='demo').first()
+    if not demo_user:
+        print("📊 Demo user not found - creating demo data...")
+        try:
+            from create_demo_data import create_demo_data
+            create_demo_data()
+            print("✅ Demo data created successfully!")
+        except Exception as e:
+            print(f"⚠️ Could not create demo data: {e}")
 
 
 # ============ AUTHENTICATION ROUTES ============
@@ -529,6 +541,35 @@ def home():
 def dashboard():
     """Renders the main dashboard (requires login)"""
     return render_template('index.html')
+
+@app.route('/api/create-demo-data', methods=['POST'])
+def api_create_demo_data():
+    """API endpoint to manually create demo data (for Render free tier)"""
+    try:
+        from backend.database import User
+        demo_user = User.query.filter_by(username='demo').first()
+        
+        if demo_user:
+            return jsonify({
+                'success': True,
+                'message': 'Demo data already exists!',
+                'credentials': {'username': 'demo', 'password': 'demo123'}
+            }), 200
+        
+        from create_demo_data import create_demo_data
+        create_demo_data()
+        
+        return jsonify({
+            'success': True,
+            'message': 'Demo data created successfully!',
+            'credentials': {'username': 'demo', 'password': 'demo123'}
+        }), 201
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
 
 
 if __name__ == '__main__':

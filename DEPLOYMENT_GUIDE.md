@@ -377,6 +377,16 @@ git push origin main
 
 ## 🆘 Troubleshooting
 
+### Issue: "metadata-generation-failed" / Pandas compilation error
+**Cause**: Python 3.13 compatibility issues with pandas/numpy
+**Solution**: Use Python 3.11 (now fixed!)
+- ✅ Created `runtime.txt` with `python-3.11.7`
+- ✅ Updated pandas to 2.2.0 (Python 3.13 compatible)
+- ✅ Updated numpy to 1.26.4
+- ✅ Updated scikit-learn to 1.4.0
+- ✅ Updated google-generativeai to 0.8.3
+**Status**: Fixed in latest commit! Render will use Python 3.11 now.
+
 ### Issue: "Demo login not working" / "Invalid credentials"
 **Cause**: You haven't run `create_demo_data.py` yet
 **Solution**: 

@@ -518,11 +518,16 @@ def get_dashboard(user_id):
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
-# ============ MAIN PAGE ============
+# ============ MAIN PAGES ============
 
 @app.route('/')
-def index():
-    """Renders the main page"""
+def home():
+    """Renders the landing/home page"""
+    return render_template('home.html')
+
+@app.route('/dashboard')
+def dashboard():
+    """Renders the main dashboard (requires login)"""
     return render_template('index.html')
 
 

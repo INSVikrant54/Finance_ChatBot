@@ -410,6 +410,14 @@ git push origin main
 
 ## 🆘 Troubleshooting
 
+### Issue: SQLAlchemy AssertionError with Python 3.13 (SOLVED ✅)
+**Error**: `AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly`
+**Cause**: SQLAlchemy 2.0.25 doesn't fully support Python 3.13's typing changes
+**Solution**: Updated to SQLAlchemy 2.0.36 which has Python 3.13 support
+- ✅ Updated sqlalchemy from 2.0.25 to 2.0.36
+- ✅ Updated runtime.txt to python-3.11.9 (Render's latest 3.11)
+**Status**: Fixed in commit `57cff1e`! Deployment should now succeed.
+
 ### Issue: "metadata-generation-failed" / Pandas compilation error (SOLVED ✅)
 **Cause**: Python 3.13 compatibility issues + unused packages causing build failures
 **Error**: `error: standard attributes in middle of decl-specifiers` in pandas compilation

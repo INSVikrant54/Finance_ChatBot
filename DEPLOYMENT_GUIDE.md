@@ -410,6 +410,20 @@ git push origin main
 
 ## 🆘 Troubleshooting
 
+### Issue: "unable to open database file" SQLite error (SOLVED ✅)
+**Error**: `sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) unable to open database file`
+**Cause**: Render's file system is read-only except for `/tmp` directory
+**Solution**: Updated config.py to use `/tmp/finance_chatbot.db` on Render
+- ✅ Database now writes to `/tmp` (writable on Render)
+- ✅ Automatically detects Render environment
+- ✅ Local development still uses `instance/` folder
+**Status**: Fixed in commit `97d402f`! Database will now work on Render.
+
+**Note**: On Render free tier, `/tmp` is cleared on each deployment. This means:
+- ⚠️ Database resets when you redeploy (expected behavior)
+- ✅ Demo data auto-recreates on each startup (already implemented!)
+- ✅ Perfect for hackathon demos
+
 ### Issue: SQLAlchemy AssertionError with Python 3.13 (SOLVED ✅)
 **Error**: `AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly`
 **Cause**: SQLAlchemy 2.0.25 doesn't fully support Python 3.13's typing changes

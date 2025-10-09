@@ -7,17 +7,18 @@ class Config:
     """Application configuration"""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
     
-    # Database configuration - use /opt/render/project/data for Render persistence
-    # or /tmp for temporary storage on Render free tier
-    if os.environ.get('RENDER'):
-        # On Render, use absolute path to /tmp (Render free tier)
+    # Database configuration - ALWAYS use /tmp for Render (writable location)
+    # Check if running on Render or locally
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    
+    # Use /tmp on any cloud platform, instance folder locally
+    if os.path.exists('/opt/render'):  # Render detection
         DATABASE_PATH = '/tmp/finance_chatbot.db'
     else:
         # Local development
-        basedir = os.path.abspath(os.path.dirname(__file__))
-        DATABASE_PATH = os.path.join(basedir, 'instance', 'finance_chatbot.db')
-        # Create instance directory if it doesn't exist
-        os.makedirs(os.path.dirname(DATABASE_PATH), exist_ok=True)
+        instance_path = os.path.join(basedir, 'instance')
+        os.makedirs(instance_path, exist_ok=True)
+        DATABASE_PATH = os.path.join(instance_path, 'finance_chatbot.db')
     
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or f'sqlite:///{DATABASE_PATH}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -26,6 +27,7 @@ class Config:
     
     # Session configuration
     PERMANENT_SESSION_LIFETIME = 86400  # 24 hours
-    SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = False  # Changed to False - Render provides HTTPS at proxy level
     SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE = 'Lax'
     SESSION_COOKIE_SAMESITE = 'Lax'

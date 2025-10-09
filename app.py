@@ -23,19 +23,31 @@ ai_service = FinanceAIService(app.config['GEMINI_API_KEY'])
 
 # Create database tables and demo data
 with app.app_context():
-    db.create_all()
-    
-    # Auto-create demo data if demo user doesn't exist
-    from backend.database import User
-    demo_user = User.query.filter_by(username='demo').first()
-    if not demo_user:
-        print("📊 Demo user not found - creating demo data...")
-        try:
-            from create_demo_data import create_demo_data
-            create_demo_data()
-            print("✅ Demo data created successfully!")
-        except Exception as e:
-            print(f"⚠️ Could not create demo data: {e}")
+    try:
+        print(f"📂 Database path: {app.config['SQLALCHEMY_DATABASE_URI']}")
+        db.create_all()
+        print("✅ Database tables created successfully")
+        
+        # Auto-create demo data if demo user doesn't exist
+        from backend.database import User
+        demo_user = User.query.filter_by(username='demo').first()
+        if not demo_user:
+            print("📊 Demo user not found - creating demo data...")
+            try:
+                from create_demo_data import create_demo_data
+                create_demo_data()
+                print("✅ Demo data created successfully!")
+            except Exception as e:
+                print(f"⚠️ Could not create demo data: {e}")
+                import traceback
+                traceback.print_exc()
+        else:
+            print("✅ Demo user already exists")
+    except Exception as e:
+        print(f"❌ Database initialization error: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
 
 
 # ============ AUTHENTICATION ROUTES ============

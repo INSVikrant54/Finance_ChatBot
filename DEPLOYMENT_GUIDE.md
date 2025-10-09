@@ -540,15 +540,32 @@ Database: SQLite
 
 ## 🏆 Ready to Deploy!
 
+**⚠️ IMPORTANT: Run Pre-Deployment Check First!**
+
+```powershell
+# Run verification script to check for issues
+python verify_deployment.py
+```
+
 **Recommended Steps:**
-1. ✅ Push latest code to GitHub
-2. ✅ Sign up on Render.com
-3. ✅ Connect GitHub repo
-4. ✅ Click Deploy
-5. ✅ Wait 5 minutes
-6. ✅ Run create_demo_data.py in Render shell
-7. ✅ Test your live app
-8. ✅ Share URL with judges
+1. ✅ Run `python verify_deployment.py` - Check for deployment issues
+2. ✅ Push latest code to GitHub (`git push origin main`)
+3. ✅ Sign up on Render.com
+4. ✅ Connect GitHub repo
+5. ✅ Configure environment variables (see below)
+6. ✅ Click Deploy
+7. ✅ Wait 3-5 minutes (now faster!)
+8. ✅ Check logs for "✅ Demo data created successfully!"
+9. ✅ Test your live app
+10. ✅ Share URL with judges
+
+**Environment Variables for Render:**
+```
+FLASK_ENV=production
+GEMINI_API_KEY=AIzaSyDOzogpt08zzEDyeQuozXasjXkymljwA0M
+SECRET_KEY=your-random-secret-key-here
+JWT_SECRET_KEY=your-random-jwt-key-here
+```
 
 **Good luck with your hackathon presentation! 🚀**
 
